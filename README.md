@@ -11,5 +11,5 @@ Welcome to our Java Task Manager – a simple and efficient way to stay organize
 
 # ⚙️ Prerequisites
 
-- Java Magic: Make sure you have Java Development Kit (JDK) installed (version X.X or higher).
+- Java Magic: Make sure you have Java Development Kit 
 - JavaFX Charm: JavaFX library is needed for our elegant user interface.
