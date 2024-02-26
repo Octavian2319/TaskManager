@@ -1,3 +1,7 @@
+import java.io.File;
+
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -19,9 +23,23 @@ public class AddController {
     @FXML
     private TextField TitleField;
 
-    @FXML
-    void SubmitButton(ActionEvent event) {
-        
+    String name;
+    void NamaM(String a) {
+        name = a;
     }
+
+    @FXML
+    void SubmitButton(ActionEvent event) throws IOException {
+        String nume = "Task_" + name + ".txt";
+        String username = DataStore.getInstance().getUsername();
+        System.out.println("Numele primit este " + username);
+        File file = new File(nume);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+    }
+
+    
 
 }
