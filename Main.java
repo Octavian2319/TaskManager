@@ -14,15 +14,13 @@ public class Main extends Application {
 
         stage.setScene(scene);
 
-        stage.setTitle("Welcome Page");
+        stage.setTitle("Task Manager");
 
         stage.show();
     }
 
-
     public static void main(String[] args) {
         launch(args);
-        
+
     }
 }
-
