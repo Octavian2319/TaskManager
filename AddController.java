@@ -23,25 +23,21 @@ public class AddController {
     @FXML
     private TextField TitleField;
 
-
     @FXML
     void SubmitButton(ActionEvent event) throws IOException {
-        
 
-        String username = DataStore.getInstance().getUsername();//return in username 
+        String username = DataStore.getInstance().getUsername();// return in username
         System.out.println("Numele primit este " + username);
         String nume = "Task_" + username + ".txt";
         File file = new File(nume);
         if (!file.exists()) {
             file.createNewFile();
         }
-        FileWriter writer=new FileWriter(nume,true);
-        writer.write(TitleField.getText()+"\n"+TextArea.getText()+"\n"+Date.getValue()+"\n"+"~\n");
+        FileWriter writer = new FileWriter(nume, true);
+        writer.write(TitleField.getText() + "\n" + TextArea.getText() + "\n" + Date.getValue() + "\n" + "~\n");
         writer.close();
         new SwitchScene(AddScene, "MainPage.FXML");
 
     }
-
-    
 
 }
