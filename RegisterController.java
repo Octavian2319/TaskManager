@@ -22,26 +22,30 @@ public class RegisterController {
 
     @FXML
     private AnchorPane Scene2;
+
     @FXML
     void RegisterButton(ActionEvent event) throws IOException {
-        try{
-            File details=new File("details.txt");
+        try {
+            File details = new File("details.txt");
             if (!details.exists()) {
                 details.createNewFile();
             }
 
             System.out.println("Open with succes");
-            FileWriter myWrite= new FileWriter("details.txt", true);
-            myWrite.write(NameField.getText()+","+PasswordField.getText()+"\n");
+            FileWriter myWrite = new FileWriter("details.txt", true);
+            myWrite.write(NameField.getText() + "," + PasswordField.getText() + "\n");
+
             myWrite.close();
-            
+        } catch (Exception e) {
+            System.err.println("It didn't open\n" + "" + e);
         }
-        catch(Exception e){
-            System.err.println("It didn't open\n" +  "" + e);
+        String nume = "Task_" + NameField.getText() + ".txt";
+        File NameFile = new File(nume);
+        if (!NameFile.exists()) {
+            NameFile.createNewFile();
         }
+        System.out.println("Created with succes Task File");
         new SwitchScene(Scene2, "WelcomeScene.fxml");
     }
 
 }
-
-
